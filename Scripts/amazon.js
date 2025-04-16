@@ -47,7 +47,7 @@ products.forEach((product) => {
           </div>
 
           <button class="add-to-cart-button button-primary js-add-to-cart"
-          data-product-name="${product.name}">
+          data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -60,13 +60,13 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', () => {
-      const productName = button.dataset.productName;
+      const productID = button.dataset.productId;
 
       // To not put duplicate product, but to increase the quantity if same product came
       let matchingItem;
       
       cart.forEach((item) => {
-        if(productName === item.productName){
+        if(productID === item.productId){
           matchingItem = item;
         }
       });
@@ -75,7 +75,7 @@ document.querySelectorAll('.js-add-to-cart')
         matchingItem.quantity += 1;
       } else{ 
         cart.push({
-          productName: productName,
+          productId: productID,
           quantity: 1
         });
       }
