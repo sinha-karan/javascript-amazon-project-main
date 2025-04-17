@@ -1,3 +1,5 @@
+import {cart} from "../data/cartAmazon.js";
+
 let productsHTML = '';
 
 products.forEach((product) => {
