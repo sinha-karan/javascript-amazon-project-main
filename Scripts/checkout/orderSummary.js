@@ -142,7 +142,12 @@ export function renderOrderSummary(){
       });
     });
 
-    function updateCartQuantity() {
+   
+  updateCartQuantity();
+
+}
+
+ export function updateCartQuantity() {
       let cartQuantity = 0;
 
     cart.forEach((cartItem) => {
@@ -152,7 +157,3 @@ export function renderOrderSummary(){
     document.querySelector('.js-return-to-home-link')
       .innerHTML = `${cartQuantity} items`;
     }
-
-    updateCartQuantity();
-
-}
