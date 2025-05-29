@@ -1,7 +1,15 @@
 import { renderOrderSummary,updateCartQuantity  } from "../../Scripts/checkout/orderSummary.js";
 import {loadFromStorage} from "../../data/cartAmazon.js";
+import { loadProducts } from "../../data/allProducts.js";
 
 describe('test suite: renderOrderSummary', () => {
+  beforeAll((done) => {
+    loadProducts(() => {
+      done();
+    });
+    
+  });
+
   it('displays the cart', () => {
     document.querySelector('.js-test-container').innerHTML =
      `<div class="js-test-container">
