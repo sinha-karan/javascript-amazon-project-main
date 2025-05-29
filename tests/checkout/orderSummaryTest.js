@@ -1,10 +1,10 @@
 import { renderOrderSummary,updateCartQuantity  } from "../../Scripts/checkout/orderSummary.js";
 import {loadFromStorage} from "../../data/cartAmazon.js";
-import { loadProducts } from "../../data/allProducts.js";
+import { loadProducts, loadProductsFetch } from "../../data/allProducts.js";
 
 describe('test suite: renderOrderSummary', () => {
   beforeAll((done) => {
-    loadProducts(() => {
+    loadProductsFetch().then(() => {
       done();
     });
     
